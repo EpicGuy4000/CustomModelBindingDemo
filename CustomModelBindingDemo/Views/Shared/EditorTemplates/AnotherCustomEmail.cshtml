@@ -1,0 +1,17 @@
+﻿@model CustomModelBindingDemo.Models.EmailModel
+
+@{ 
+    var additionalValues = ModelMetadata.FromLambdaExpression(m => m, ViewData).AdditionalValues;
+
+    var domains = (additionalValues[Constants.ModelBinding.CustomEmail.Domains] as string[] ?? Enumerable.Empty<string>())
+    .Select(domainValue => new SelectListItem
+    {
+        Value = domainValue,
+        Text = domainValue,
+        Selected = Model?.Domain == domainValue
+    });
+}
+
+@Html.TextBoxFor(m => m.Username)
+<span>@@</span>
+@Html.DropDownListFor(m => m.Domain, domains)

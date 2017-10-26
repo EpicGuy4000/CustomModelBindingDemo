@@ -1,0 +1,12 @@
+﻿@model CustomModelBindingDemo.Models.AnotherEmailDemoModel
+
+<h2>Email Demo</h2>
+<h3>Here we have a form which includes an email field wich consists of 3 parts</h3>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "emailForm" })) {
+    @Html.LabelFor(m => m.Email)
+    @Html.EditorFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
+    <hr />
+    <input id="emailFormSubmit" type="submit" value="Submit"/>
+}

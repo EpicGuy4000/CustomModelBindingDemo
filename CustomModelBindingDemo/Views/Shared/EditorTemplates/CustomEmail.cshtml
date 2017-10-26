@@ -1,0 +1,21 @@
+﻿@model string
+
+@{ 
+    var additionalValues = ModelMetadata.FromLambdaExpression(m => m, ViewData).AdditionalValues;
+
+    var values = (Model ?? string.Empty).Split('@');
+    var username = values[0];
+    var domain = values.Length > 1 ? values[1] : null;
+
+    var domains = (additionalValues[Constants.ModelBinding.CustomEmail.Domains] as string[] ?? Enumerable.Empty<string>())
+    .Select(domainValue => new SelectListItem
+    {
+        Value = domainValue,
+        Text = domainValue,
+        Selected = domain == domainValue
+    });
+}
+
+@Html.TextBox(Constants.ModelBinding.CustomEmail.UsernameKey, username)
+<span>@@</span>
+@Html.DropDownList(Constants.ModelBinding.CustomEmail.DomainKey, domains)
