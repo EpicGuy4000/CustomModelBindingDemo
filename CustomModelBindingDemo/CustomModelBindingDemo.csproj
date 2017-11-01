@@ -146,6 +146,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="ModelBinders\CustomEmailModelBinder.cs" />
     <Compile Include="Attributes\CustomEmailAttribute.cs" />
+    <Compile Include="Models\DefaultValueEmailDemoModel.cs" />
     <Compile Include="Models\EmailDemoModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -162,6 +163,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Compile Include="ModelBinders\SpecialValuesEmailModelBinder.cs" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -195,9 +197,11 @@
     <Content Include="Views\Shared\EditorTemplates\CustomEmail.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AnotherCustomEmail.cshtml" />
     <Content Include="Views\Home\AnotherEmail.cshtml" />
+    <Content Include="Views\Home\SpecialValuesEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ValueProviders\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

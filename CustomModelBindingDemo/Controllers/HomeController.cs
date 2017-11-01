@@ -1,4 +1,5 @@
-﻿using CustomModelBindingDemo.Models;
+﻿using CustomModelBindingDemo.ModelBinders;
+using CustomModelBindingDemo.Models;
 using System.Web.Mvc;
 
 namespace CustomModelBindingDemo.Controllers
@@ -40,6 +41,22 @@ namespace CustomModelBindingDemo.Controllers
                 return View(model);
             }
             return Content(model.Email.GetEmail());
+        }
+
+        public ActionResult SpecialValuesEmail()
+        {
+            return View(new EmailModel());
+        }
+
+        [HttpPost]
+        [ActionName(nameof(SpecialValuesEmail))]
+        public ActionResult SpecialValuesEmailPost([ModelBinder(typeof(SpecialValuesEmailModelBinder))]EmailModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            return Content(model.GetEmail());
         }
 
         public ActionResult Contact()

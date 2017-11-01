@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "SpecialValuesEmail";
+}
+
+<h2>Special Values Email Demo</h2>
+<h3>If we don't fill out some part of the email it will get defaulted</h3>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "emailForm" }))
+{
+    @Html.EditorForModel()
+    <hr />
+    <input id="emailFormSubmit" type="submit" value="Submit" />
+}
