@@ -144,8 +144,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\AnotherCustomEmailAttribute.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Data\UserRepositoryDictionary.cs" />
     <Compile Include="ModelBinders\CustomEmailModelBinder.cs" />
     <Compile Include="Attributes\CustomEmailAttribute.cs" />
+    <Compile Include="ModelBinders\UserFromDatabaseModelBinder.cs" />
     <Compile Include="Models\DefaultValueEmailDemoModel.cs" />
     <Compile Include="Models\EmailDemoModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -154,7 +159,10 @@
     </Compile>
     <Compile Include="Models\AnotherEmailDemoModel.cs" />
     <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueProviders\XmlValueProvider.cs" />
+    <Compile Include="ValueProviders\XmlValueProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -198,10 +206,10 @@
     <Content Include="Views\Shared\EditorTemplates\AnotherCustomEmail.cshtml" />
     <Content Include="Views\Home\AnotherEmail.cshtml" />
     <Content Include="Views\Home\SpecialValuesEmail.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ValueProviders\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

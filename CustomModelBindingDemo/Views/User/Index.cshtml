@@ -1,0 +1,34 @@
+﻿@model CustomModelBindingDemo.Models.UserModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>User Demo</h2>
+
+<div>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "emailForm" }))
+    {
+        @Html.HiddenFor(m => m.Email)
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.EditorFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.EditorFor(model => model.LastName)
+            </dd>
+
+        </dl>
+        <hr />
+        <input id="userFormSubmit" type="submit" value="Submit" />
+    }
+</div>
