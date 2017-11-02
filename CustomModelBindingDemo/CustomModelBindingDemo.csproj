@@ -151,7 +151,6 @@
     <Compile Include="ModelBinders\CustomEmailModelBinder.cs" />
     <Compile Include="Attributes\CustomEmailAttribute.cs" />
     <Compile Include="ModelBinders\UserFromDatabaseModelBinder.cs" />
-    <Compile Include="Models\DefaultValueEmailDemoModel.cs" />
     <Compile Include="Models\EmailDemoModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
